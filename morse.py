@@ -32,5 +32,15 @@ def decode(message):
         "--..": "Z",
         "... --- ...": "SOS"
     }
-    return alphabet[message]    
+    answer = ""
+
+    words = message.split(" / ")
+
+    for word in words:
+        for letter in word.split(" "):
+            answer += alphabet[letter]
+        answer += " "
+    answer = answer.strip()
+
+    return answer    
 
